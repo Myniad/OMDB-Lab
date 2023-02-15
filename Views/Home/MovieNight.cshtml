@@ -1,0 +1,42 @@
+﻿@model List<OMDB_Model>
+
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+
+<form asp-method="post" asp-action="MovieNight">
+    <!-- post request is why we use "post" -->
+
+    <p>Please enter the first movie title</p>
+    <input type="text" name="title1" />
+
+    <p>Please enter the second movie title</p>
+    <input type="text" name="title2" />
+
+    <p>Please enter the third movie title</p>
+    <input type="text" name="title3" />
+
+    <input type="submit" />  <!-- When submitted, it will post and go to home controller-->
+</form>
+
+
+            @{
+                if(Model !=null)
+                {
+                    foreach(OMDB_Model o in Model)
+                    {
+                        <h1>@o.Title</h1>
+                        <div class="card" style="width:10rem;">
+                        <img src="@o.Poster" />
+                        <p>@o.Year</p>
+                        <p>@o.Genre</p>
+                        <p>@o.Runtime</p>
+                        </div>
+                    }
+                }
+            }

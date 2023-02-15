@@ -23,8 +23,11 @@
     if (Model != null)
     {
         <h1>@Model.Title</h1>
+        <div class="card" style="width:10rem;">
+        <img src ="@Model.Poster"/>
         <p>@Model.Year</p>
         <p>@Model.Genre</p>
         <p>@Model.Runtime</p>
+        </div>
     }
 }
